@@ -1,0 +1,73 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  /* Background pattern from Toptal Subtle Patterns */
+  background: url(img/fabric_plaid.png);
+  font-family: 'Lato', sans-serif;
+}
+
+#rowID {
+  height: 100vh;
+}
+
+#leftPanel {
+  padding: 30px 50px;
+}
+
+#leftPanel h4 {
+  margin-bottom: 30px;
+}
+
+#rightPanel {
+  text-align: center;
+}
+
+#overview {
+  margin: 30px 0;
+}
+
+.panels {
+  background: linear-gradient(45deg, #cdcccc, #ededed);
+  -webkit-box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  padding: 20px 20px;
+  margin-top: 30px;
+}
+
+#votes {
+  margin-bottom: 30px;
+}
+
+#score {
+  font-size: 2rem;
+}
+
+#score span {
+  display: block;
+  font-size: 0.7rem;
+  margin-bottom: 10px;
+}
+
+.animated {
+  animation-name: fadeIn;
+  animation-duration: 1.3s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
