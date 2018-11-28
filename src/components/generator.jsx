@@ -37,19 +37,25 @@ handleGenerating(){
       const chosenMovie = options.results[randomOnPage];
       const {title, poster_path, vote_count, vote_average, overview} = chosenMovie;
       this.setState({title: title, poster: `https://image.tmdb.org/t/p/w185${poster_path}`, voteCount: vote_count, voteAvg: vote_average, overview: overview
-      })
+      });
     },
     error: (jqxhr, textStatus, errorThrown) => {
       console.log("There was an error")
     }
   })
 
-  $("button").click(()=>{
+
+  $("#generatorButton").click(()=>{
     $('.toAnimate').addClass('animated');
+    $('button').attr('disabled', true);
+    setTimeout(()=> {
+          $('button').attr('disabled', false);
+        }, 1000);
+    setTimeout(()=> {
+          $(".toAnimate").removeClass('animated');
+        }, 1300);
 });
-setTimeout(()=> {
-      $(".toAnimate").removeClass('animated');
-    }, 1300);
+
 
   }
 
@@ -62,7 +68,7 @@ setTimeout(()=> {
       <div id='leftPanel' className='panels col-10 col-md-8 col-lg-7 mx-auto my-auto'>
         <h4 className='toAnimate'>{this.state.title}</h4>
       <div className='toAnimate' id="overview">{this.state.overview}</div>
-      <Buttons generate={this.handleGenerating} title={this.state.title}/>
+      <Buttons generate={()=>{this.handleGenerating()}} title={this.state.title}/>
       </div>
 
     <div id='rightPanel' className='col-6 col-md-4 col-lg-3 mx-auto my-auto'>
